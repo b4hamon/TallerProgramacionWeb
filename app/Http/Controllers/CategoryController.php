@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CategorieController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,8 +25,14 @@ class CategorieController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        $author = new Categories();
+        $author->name = $request->name;
+        $author->description = $request->description;
+        $author->save();
+        return redirect ()->route('Categories.index');
+        //
+    
         //
     }
 

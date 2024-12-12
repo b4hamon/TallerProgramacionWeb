@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('Categories', [CategoryController:: class, 'index'])->name('Categories.index');
+
+Route::post('Categories', [CategoryController:: class, 'store'])->name('Categories.store');
+
